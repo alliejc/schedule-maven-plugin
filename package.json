@@ -1,12 +1,14 @@
 {
-  "name": "react-redux",
+  "name": "Schedule-Maven-Plugin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "deep-extend": "^0.4.1",
     "material-ui": "^0.17.3",
+    "moment": "^2.18.1",
     "react": "^15.5.4",
     "react-addons-pure-render-mixin": "^15.5.2",
+    "react-big-calendar": "^0.13.0",
     "react-dom": "^15.5.4",
     "react-frame-component": "^1.0.3",
     "react-mounter": "^1.2.0",
