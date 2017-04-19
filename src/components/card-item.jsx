@@ -3,6 +3,7 @@ import { Card, CardMedia, CardTitle, CardActions, FlatButton } from 'material-ui
 import logo from '../logo.svg';
 import TimePicker from './time-picker';
 import Calendar from './date-picker';
+import EditDescription from './edit-description';
 
 
 const styles = {
@@ -57,7 +58,8 @@ class CardItem extends React.Component {
 					<CardMedia style={mediaStyles}>
 						<img alt="Pin" src={logo}/>
 					</CardMedia>
-					<CardTitle style={styles} title="Title" subtitle="Hello"/>
+					<CardTitle style={styles} title="Title"/>
+                    <EditDescription style={styles} />
 					<CardActions>
 						<TimePicker onChange={(hours, minutes) => this.setTime(hours, minutes)}/>
 						<Calendar
