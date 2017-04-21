@@ -1,11 +1,6 @@
 import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 
-const styles = {
-    display: 'flex',
-    flexDirection: 'row wrap',
-};
-
 class DatePickerClass extends React.Component {
 
     handleChange = (event, date) => {
@@ -21,7 +16,6 @@ class DatePickerClass extends React.Component {
     render() {
         return (
             <DatePicker
-                style={styles}
                 hintText="Pick a Date"
                 onChange={this.handleChange}
             />

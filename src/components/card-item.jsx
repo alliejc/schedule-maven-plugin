@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, CardMedia, CardTitle, CardActions, FlatButton } from 'material-ui';
+import { Card, CardMedia, CardActions, FlatButton } from 'material-ui';
 import logo from '../logo.svg';
 import TimePicker from './time-picker';
 import Calendar from './date-picker';
-import EditDescription from './edit-description';
+import EditText from './edit-text';
 
 
 const styles = {
@@ -12,12 +12,12 @@ const styles = {
     width: 'auto%',
     textOverflow: 'ellipsis',
     wordWrap: 'break-word',
+    padding: '8px'
 };
 
 const mediaStyles = {
     padding: '8px',
 };
-
 
 //Receive scraped images w/metadata to display as schedule cards
 class CardItem extends React.Component {
@@ -29,6 +29,7 @@ class CardItem extends React.Component {
         selectedBoardUrl: '',
         board: '',
         link: '',
+        value: '',
 
         // time
         hours: 0,
@@ -51,15 +52,20 @@ class CardItem extends React.Component {
         this.setState({ month });
         this.setState({ year });
     };
+
+    setDescription = (value) => {
+        this.setState({ value });
+    };
+
     render() {
         return (
 			<div>
-				<Card>
+				<Card style={styles}>
 					<CardMedia style={mediaStyles}>
 						<img alt="Pin" src={logo}/>
 					</CardMedia>
-					<CardTitle style={styles} title="Title"/>
-                    <EditDescription style={styles} />
+                    <EditText floatingLabelText="Floating Label Text" />
+                    <EditText onChange={(value) => this.setDescription(value)}/>
 					<CardActions>
 						<TimePicker onChange={(hours, minutes) => this.setTime(hours, minutes)}/>
 						<Calendar
